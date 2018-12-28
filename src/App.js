@@ -12,7 +12,39 @@ const { Sender, Receiver } = createOauthFlow({
     redirectUri: (process.env.REACT_APP_ROOT_URL || 'http://localhost:3000') + '/callback',
 });
 
+class HelloUser extends Component {
+    constructor(props) {
+        super(props)
+        this.state = { user: {}}
+    }
+
+    componentDidMount() {
+        console.log("componentDidMount")
+        fetch('https://api.data.world/v0/user', {
+            headers: {
+                'Authorization': 'Bearer ' + this.props.accessToken
+            }
+        })
+            .then(response => response.json())
+            .then(data => this.setState({ user: data }))
+    }
+
+    render() {
+        console.log("render")
+        console.log(this.state)
+        if (this.state.user['displayName']) {
+            return <div>Hello, {this.state.user['displayName']}</div>
+        }
+        return <div>loading...</div>
+    }
+}
+
 class App extends Component {
+
+    handleSuccess = (accessToken, {response, state}) => {
+        sessionStorage.setItem("accessToken", accessToken);
+    }
+
   render() {
     return (
       <BrowserRouter>
@@ -50,7 +82,12 @@ class App extends Component {
                  )}/>
 
           <Route exact path="/auth/success"
-                 render={() => <div>Successfully authorized data.world!</div>}/>
+                 render={() =>
+                     <div>
+                         Successfully authorized data.world!
+                         <HelloUser accessToken={sessionStorage.getItem("accessToken")}/>
+                     </div>
+                 }/>
         </div>
       </BrowserRouter>
     );
