@@ -7895,10 +7895,10 @@ react-error-overlay@^5.1.1:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.1.tgz#56f0439f001ff3588da0f479a86482ccb1e708cb"
   integrity sha512-gJcOyak5ri9mzhpFObSAkCqNNBCVZE8LaR/mX37agULgSL0dobgX11NVSIetvNzhHMkr6CIqV0xiutvvcjBtkw==
 
-react-oauth-flow@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-oauth-flow/-/react-oauth-flow-1.2.0.tgz#ebeeefba54733650a569c7e021cb4b862fc4c7f9"
-  integrity sha512-BMxwtiwsx2fFgfXhfMKkrQ/MYtQFIG3zovb+xjOVZr4iI4vDi+o7BI5PdD5VVBWdC+M8RaYZWnmsig8okoJm+g==
+react-oauth-flow@=1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-oauth-flow/-/react-oauth-flow-1.1.1.tgz#16becc29b4336e063cb74c0fee9f84cf41ebd644"
+  integrity sha512-lvfwvjsUE7swVOxOFKT+0RLPz74MYiWXa9WbaHnAonZVUkISApZk7ClZgv7GoVmrWDmxo1O6mDPTYDxkSu/DWg==
   dependencies:
     qs "^6.5.1"
 
