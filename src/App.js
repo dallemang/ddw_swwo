@@ -9,7 +9,7 @@ const { Sender, Receiver } = createOauthFlow({
     tokenUrl: 'https://data.world/oauth/access_token',
     clientId: process.env.REACT_APP_DW_CLIENT_ID,
     clientSecret: process.env.REACT_APP_DW_CLIENT_SECRET,
-    redirectUri: 'http://localhost:3000/callback',
+    redirectUri: (process.env.REACT_APP_ROOT_URL || 'http://localhost:3000') + '/callback',
 });
 
 class App extends Component {
