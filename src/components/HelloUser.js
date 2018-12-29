@@ -1,26 +1,25 @@
-import React, {Component} from "react";
+import React, {Component} from "react"
+import Async from "react-async"
 
 class HelloUser extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {user: {}}
-    }
 
-    componentDidMount() {
+    loadUser = ({accessToken}) =>
         fetch('https://api.data.world/v0/user', {
-            headers: {
-                'Authorization': 'Bearer ' + this.props.accessToken
-            }
+            headers: { 'Authorization': 'Bearer ' + accessToken }
         })
             .then(response => response.json())
-            .then(data => this.setState({user: data}))
-    }
 
     render() {
-        if (this.state.user['displayName']) {
-            return <div>Hello, {this.state.user['displayName']}</div>
-        }
-        return <div>loading...</div>
+        return (
+            <Async promiseFn={this.loadUser} accessToken={this.props.accessToken}>
+                <Async.Loading>
+                    <div>Loading...</div>
+                </Async.Loading>
+                <Async.Resolved>
+                    {data => <div>Hi, {data.displayName}</div>}
+                </Async.Resolved>
+            </Async>
+        )
     }
 }
 

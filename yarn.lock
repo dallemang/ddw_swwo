@@ -7850,6 +7850,11 @@ react-app-polyfill@^0.2.0:
     raf "3.4.0"
     whatwg-fetch "3.0.0"
 
+react-async@^3.8.4:
+  version "3.8.4"
+  resolved "https://registry.yarnpkg.com/react-async/-/react-async-3.8.4.tgz#127a5508ec06fb76ca561566a4b5e2785733cc61"
+  integrity sha512-I5tPmSWAsX5jHY1pZTXGrDc4L9yaJkwmJLsMj5a7IDhxWR4WSqd2Pujd6tb68VKOA5V+qfWH6QLe5VqmBZ9isA==
+
 react-dev-utils@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-7.0.0.tgz#b99d87aea260294bf7ea087cdbd6b099fac3eb27"
