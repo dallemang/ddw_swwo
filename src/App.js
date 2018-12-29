@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
-import { createOauthFlow } from 'react-oauth-flow';
+import React, {Component} from 'react';
+import {BrowserRouter, Redirect, Route} from 'react-router-dom';
+import {createOauthFlow} from 'react-oauth-flow';
 import logo from './logo.svg';
 import './App.css';
+import {HelloUser} from './components/HelloUser'
 
 const { Sender, Receiver } = createOauthFlow({
     authorizeUrl: 'https://data.world/oauth/authorize',
@@ -11,33 +12,6 @@ const { Sender, Receiver } = createOauthFlow({
     clientSecret: process.env.REACT_APP_DW_CLIENT_SECRET,
     redirectUri: (process.env.REACT_APP_ROOT_URL || 'http://localhost:3000') + '/callback',
 });
-
-class HelloUser extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { user: {}}
-    }
-
-    componentDidMount() {
-        console.log("componentDidMount")
-        fetch('https://api.data.world/v0/user', {
-            headers: {
-                'Authorization': 'Bearer ' + this.props.accessToken
-            }
-        })
-            .then(response => response.json())
-            .then(data => this.setState({ user: data }))
-    }
-
-    render() {
-        console.log("render")
-        console.log(this.state)
-        if (this.state.user['displayName']) {
-            return <div>Hello, {this.state.user['displayName']}</div>
-        }
-        return <div>loading...</div>
-    }
-}
 
 class App extends Component {
 
