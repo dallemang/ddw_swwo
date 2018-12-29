@@ -7,7 +7,6 @@ class HelloUser extends Component {
     }
 
     componentDidMount() {
-        console.log("componentDidMount")
         fetch('https://api.data.world/v0/user', {
             headers: {
                 'Authorization': 'Bearer ' + this.props.accessToken
@@ -18,8 +17,6 @@ class HelloUser extends Component {
     }
 
     render() {
-        console.log("render")
-        console.log(this.state)
         if (this.state.user['displayName']) {
             return <div>Hello, {this.state.user['displayName']}</div>
         }
