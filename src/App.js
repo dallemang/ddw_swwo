@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
-import {Col, Grid, MenuItem, Nav, Navbar, NavDropdown, Row} from 'react-bootstrap'
+import {Col, Grid, MenuItem, Nav, Navbar, NavDropdown, Row, ListGroup, ListGroupItem} from 'react-bootstrap'
 import {BrowserRouter, Link, Redirect, Route} from 'react-router-dom'
 import {createOauthFlow} from 'react-oauth-flow'
 import {AuthConsumer, AuthProvider} from 'react-check-auth'
 import './App.css'
 import SVGIcon from './components/SVGIcon'
+import MyDatasets from './components/MyDatasets'
 
 
 const {Sender, Receiver} = createOauthFlow({
@@ -87,8 +88,17 @@ class App extends Component {
                                                            <div>
                                                                {userInfo &&<p>Welcome, {userInfo.displayName}.</p>}
                                                                {!userInfo && <p>ddw-react-oauth-start</p>}
+
+                                                               {userInfo &&
+                                                                   <ListGroup>
+                                                                       <ListGroupItem href="/MyDatasets">My Datasets</ListGroupItem>
+                                                                   </ListGroup>
+                                                               }
                                                            </div>
                                                        )}/>
+
+                                                <Route exact path="/MyDatasets"
+                                                       render={(props) => <MyDatasets {...props} accessToken={this.state.accessToken}/>}/>
 
                                                 <Route exact path="/callback"
                                                        render={({location}) => (
