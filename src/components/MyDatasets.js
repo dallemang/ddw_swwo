@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import Async from "react-async"
+import LoadingPanel from "./LoadingPanel"
 import {ListGroup, ListGroupItem, Pager} from 'react-bootstrap'
 
 
 class MyDatasets extends Component {
     state = {
         q: {
-            limit: 10,
+            limit: 5,
             next: 0
         }
     }
@@ -31,7 +32,7 @@ class MyDatasets extends Component {
         return (
             <Async promiseFn={() => this.loadDatasets()}>
                 {({data, error, isLoading}) => {
-                    if (isLoading) return "Loading..."
+                    if (isLoading) return <LoadingPanel/>
                     if (error) return `Something went wrong: ${error.message}`
                     if (data && data.records)
                         return (
