@@ -1,32 +1,364 @@
+body {
+  color: #4E5057;
+  font-family: Lato;
+  font-size: 16px;
+}
+
+p {
+  font-size: .875rem;
+  line-height: 1.125rem;
+  padding: 1rem;
+  margin-bottom: 0;
+}
+
+tr {
+  text-align: left;
+}
+
+h4 {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+label {
+  font-size: .875rem;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url(./static/fonts/Lato/Lato.woff) format('woff')
+}
+
+.svg-icon > svg {
+  display: inline;
+  width: 1em;
+  height: 1em;
+}
+
 .App {
   text-align: center;
 }
 
+.App-container {
+  margin-top: 3rem;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 80px;
+}
+
+.main-nav-logo {
+  width: 3rem;
+  height: 3rem;
+  display: inline-block;
+  margin-top: .25rem;
+}
+
+.main-nav-logo .svg-icon > svg {
+  width: 3rem;
+  height: 3rem;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #222;
+  height: 10rem;
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  position: relative;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-nav {
+  background-color: #fff;
+  height: 4rem;
+  padding: 0;
+}
+
+.nav-title {
+  margin: 0;
+}
+
+.panel-default {
+  margin-bottom: 1rem;
+}
+
+.panel-body {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.panel-banner-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.875rem;
+  text-align: center;
+  margin: .5rem;
+}
+
+.btn {
+  margin: 1rem;
+}
+
+.btn-sm {
+  min-width: 10rem;
+  height: 2.5rem;
+}
+
+.sparkle-logo, .jupyter-logo {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.header-button {
+  margin: 0 0 .5rem 0;
+}
+
+.header-icon {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  display: inline-block;
+  margin-right: .625rem;
+  top: 0;
+  left: 0;
+}
+
+.header-icon .svg-icon > svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.title-with-icon {
+  padding-left: 3rem;
+}
+
+.options-panel {
+  padding: 2rem;
+  position: relative;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.25rem;
+  margin: 0 1rem;
+}
+
+.navbar .landing-logos {
+  height: 2rem;
+}
+
+.landing-logos .int-logo {
+  display: inline-block;
+  margin: 1rem;
+  position: relative;
+}
+
+.int-logo {
+  margin: 3rem auto;
+}
+
+.int-logo .svg-icon > svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.plus {
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  vertical-align: top;
+  padding-top: 1rem;
+}
+
+.option-icon {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  display: inline-block;
+}
+
+.option-icon .svg-icon > svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.option-details {
+  text-align: left;
+  padding-left: 5rem;
+}
+
+.option-details p {
+  padding: .5rem 1rem;
+}
+
+.footnote {
+  text-align: left;
+  font-size: .875rem;
+  font-weight: bold;
+  line-height: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.table-hover {
+  cursor: pointer;
+}
+
+.table-hover tbody tr td {
+  padding: .625rem 1rem;
+}
+
+.date-column {
+  text-align: right;
+}
+
+.loader {
+  font-size: 0.5rem;
+  text-indent: -9999rem;
+  border-top: 0.1875rem solid #5DC0DE;
+  border-right: 0.1875rem solid #5DC0DE;
+  border-bottom: 0.1875rem solid #5DC0DE;
+  border-left: 0.1875rem solid transparent;
+  transform: translateZ(0);
+  animation: load8 .75s infinite linear;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  margin: 3rem auto;
+}
+
+.loading-panel {
+  padding-bottom: 8rem;
+}
+
+.nav-logos {
+  transform: scale(.5);
+}
+
+.form-panel {
+  text-align: left;
+  padding: 2rem;
+}
+
+.form-panel .btn {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-panel textarea {
+  min-height: 10rem;
+}
+
+.form-panel p {
+  padding: .5rem 0;
+  line-height: 1.5rem;
+  font-size: .875rem;
+}
+
+.has-feedback .svg-icon {
+  position: absolute;
+  top: 2.4rem;
+  right: 1rem;
+}
+
+.footer-text {
+  padding-top: 6rem;
+}
+
+.tag-text {
+  padding: .25rem;
+  display: inline;
+  color: #dc4343;
+  margin: 0 .25rem;
+}
+
+.code-snippet {
+  margin-bottom: 2rem;
+}
+
+.code-snippet:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.embed-form {
+  margin-top: 2rem;
+}
+
+.build-log {
+  font-size: .6rem;
+  background-color: #333d49;
+  color: #fff;
+  height: 24rem;
+  text-align: left;
+  overflow: scroll;
+  margin-bottom: 0;
+}
+
+.error-message {
+  font-size: .75rem;
+  background-color: #333d49;
+  color: #fff;
+  height: 6rem;
+  text-align: left;
+  margin-bottom: 0;
+  text-wrap: normal;
+  white-space: normal;
+}
+
+
+a.btn {
+  line-height: 2rem;
 }
 
 @keyframes App-logo-spin {
-  from {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes load8 {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    margin: 0;
+  }
+
+  .navbar-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .container .navbar-header {
+    margin-right: 0;
+  }
+
+  .open .dropdown-menu {
+    min-width: inherit;
+    border: 1px solid lightgray !important;
+    background-color: #fff !important;
   }
 }

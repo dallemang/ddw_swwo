@@ -1,0 +1,9 @@
+<svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/status/success green</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon/status/success-green" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M8,0 C3.6,0 0,3.6 0,8 C0,12.4 3.6,16 8,16 C12.4,16 16,12.4 16,8 C16,3.6 12.4,0 8,0 Z M7,11.4 L3.6,8 L5,6.6 L7,8.6 L11,4.6 L12.4,6 L7,11.4 Z" id="status" fill="#67BF70"></path>
+    </g>
+</svg>
