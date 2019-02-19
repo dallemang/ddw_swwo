@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/ddw-react-oauth-start/static/js/runtime~main.062219d4.js"
   },
   {
-    "revision": "20181e47edf209485f8e",
-    "url": "/ddw-react-oauth-start/static/js/main.20181e47.chunk.js"
+    "revision": "dd657b75f651fb9211c7",
+    "url": "/ddw-react-oauth-start/static/js/main.dd657b75.chunk.js"
   },
   {
     "revision": "678cefe79f924facda0e",
     "url": "/ddw-react-oauth-start/static/js/1.678cefe7.chunk.js"
   },
   {
-    "revision": "20181e47edf209485f8e",
+    "revision": "dd657b75f651fb9211c7",
     "url": "/ddw-react-oauth-start/static/css/main.1a31e56b.chunk.css"
   },
   {
-    "revision": "d00d8fbc9f402ef746facb7979afed5a",
+    "revision": "c2bd1e5243abdd0eb7cb11b244703a29",
     "url": "/ddw-react-oauth-start/index.html"
   }
 ];
