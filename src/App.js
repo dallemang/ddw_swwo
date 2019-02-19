@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import {Col, Grid, MenuItem, Nav, Navbar, NavDropdown, Row, ListGroup, ListGroupItem} from 'react-bootstrap'
-import {BrowserRouter, Link, Redirect, Route} from 'react-router-dom'
+import {Col, Grid, ListGroup, ListGroupItem, MenuItem, Nav, Navbar, NavDropdown, Row} from 'react-bootstrap'
+import {HashRouter, Link, Redirect, Route} from 'react-router-dom'
 import {createOauthFlow} from 'react-oauth-flow'
 import {AuthConsumer, AuthProvider} from 'react-check-auth'
 import './App.css'
@@ -13,7 +13,7 @@ const {Sender, Receiver} = createOauthFlow({
     tokenUrl: 'https://data.world/oauth/access_token',
     clientId: process.env.REACT_APP_DW_CLIENT_ID,
     clientSecret: process.env.REACT_APP_DW_CLIENT_SECRET,
-    redirectUri: (process.env.REACT_APP_ROOT_URL || 'http://localhost:3000') + '/callback',
+    redirectUri: `${process.env.REACT_APP_ROOT_URL}/#/callback`,
 })
 
 class App extends Component {
@@ -52,7 +52,7 @@ class App extends Component {
                 <AuthConsumer>
                     {({userInfo, isLoading, error, refreshAuth}) => (
                         <div className="App">
-                            <BrowserRouter>
+                            <HashRouter basename={process.env.PUBLIC_URL}>
                                 <div>
                                     <Navbar className='App-nav'>
                                         <Navbar.Header>
@@ -78,7 +78,6 @@ class App extends Component {
                                         </Nav>
                                     </Navbar>
 
-
                                     <Grid className='App-container'>
                                         <Row>
                                             <Col xs={12} sm={8} md={6} smOffset={2} mdOffset={3}>
@@ -91,7 +90,7 @@ class App extends Component {
 
                                                                {userInfo &&
                                                                    <ListGroup>
-                                                                       <ListGroupItem href="/MyDatasets">My Datasets</ListGroupItem>
+                                                                       <ListGroupItem href={`${process.env.PUBLIC_URL}/#/MyDatasets`}>My Datasets</ListGroupItem>
                                                                    </ListGroup>
                                                                }
                                                            </div>
@@ -123,7 +122,7 @@ class App extends Component {
                                     </Grid>
 
                                 </div>
-                            </BrowserRouter>
+                            </HashRouter>
                         </div>
                     )}
                 </AuthConsumer>
