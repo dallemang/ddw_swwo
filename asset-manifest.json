@@ -1,7 +1,7 @@
 {
   "main.css": "/ddw-react-oauth-start/static/css/main.1a31e56b.chunk.css",
-  "main.js": "/ddw-react-oauth-start/static/js/main.ca509467.chunk.js",
-  "main.js.map": "/ddw-react-oauth-start/static/js/main.ca509467.chunk.js.map",
+  "main.js": "/ddw-react-oauth-start/static/js/main.5589b90d.chunk.js",
+  "main.js.map": "/ddw-react-oauth-start/static/js/main.5589b90d.chunk.js.map",
   "static/js/1.678cefe7.chunk.js": "/ddw-react-oauth-start/static/js/1.678cefe7.chunk.js",
   "static/js/1.678cefe7.chunk.js.map": "/ddw-react-oauth-start/static/js/1.678cefe7.chunk.js.map",
   "runtime~main.js": "/ddw-react-oauth-start/static/js/runtime~main.062219d4.js",
@@ -9,6 +9,6 @@
   "static/media/App.css": "/ddw-react-oauth-start/static/media/Lato.f137ee48.woff",
   "static/css/main.1a31e56b.chunk.css.map": "/ddw-react-oauth-start/static/css/main.1a31e56b.chunk.css.map",
   "index.html": "/ddw-react-oauth-start/index.html",
-  "precache-manifest.3595e5d41eeeac89a34e81c7e26180c6.js": "/ddw-react-oauth-start/precache-manifest.3595e5d41eeeac89a34e81c7e26180c6.js",
+  "precache-manifest.ca53ac7586680f1b9a3c5688fcb5fabd.js": "/ddw-react-oauth-start/precache-manifest.ca53ac7586680f1b9a3c5688fcb5fabd.js",
   "service-worker.js": "/ddw-react-oauth-start/service-worker.js"
 }
