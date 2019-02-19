@@ -1,14 +1,14 @@
 {
   "main.css": "/ddw-react-oauth-start/static/css/main.1a31e56b.chunk.css",
-  "main.js": "/ddw-react-oauth-start/static/js/main.2efc5744.chunk.js",
-  "main.js.map": "/ddw-react-oauth-start/static/js/main.2efc5744.chunk.js.map",
-  "static/js/1.83968e7d.chunk.js": "/ddw-react-oauth-start/static/js/1.83968e7d.chunk.js",
-  "static/js/1.83968e7d.chunk.js.map": "/ddw-react-oauth-start/static/js/1.83968e7d.chunk.js.map",
+  "main.js": "/ddw-react-oauth-start/static/js/main.20181e47.chunk.js",
+  "main.js.map": "/ddw-react-oauth-start/static/js/main.20181e47.chunk.js.map",
+  "static/js/1.678cefe7.chunk.js": "/ddw-react-oauth-start/static/js/1.678cefe7.chunk.js",
+  "static/js/1.678cefe7.chunk.js.map": "/ddw-react-oauth-start/static/js/1.678cefe7.chunk.js.map",
   "runtime~main.js": "/ddw-react-oauth-start/static/js/runtime~main.062219d4.js",
   "runtime~main.js.map": "/ddw-react-oauth-start/static/js/runtime~main.062219d4.js.map",
   "static/media/App.css": "/ddw-react-oauth-start/static/media/Lato.f137ee48.woff",
   "static/css/main.1a31e56b.chunk.css.map": "/ddw-react-oauth-start/static/css/main.1a31e56b.chunk.css.map",
   "index.html": "/ddw-react-oauth-start/index.html",
-  "precache-manifest.b0d9ef7d9a5969a77290163101d75a3e.js": "/ddw-react-oauth-start/precache-manifest.b0d9ef7d9a5969a77290163101d75a3e.js",
+  "precache-manifest.25d0af7b2629bd23d7821acc35850562.js": "/ddw-react-oauth-start/precache-manifest.25d0af7b2629bd23d7821acc35850562.js",
   "service-worker.js": "/ddw-react-oauth-start/service-worker.js"
 }
