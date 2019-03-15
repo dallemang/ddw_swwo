@@ -19,19 +19,19 @@ const {Sender, Receiver} = createOauthFlow({
 class App extends Component {
 
     state = {
-        accessToken: sessionStorage.getItem("accessToken")
+        accessToken: localStorage.getItem("accessToken")
     }
 
     successHandler = (refreshAuth) =>
         (accessToken, {response, state}) => {
-            sessionStorage.setItem("accessToken", accessToken)
+            localStorage.setItem("accessToken", accessToken)
             this.setState({...state, accessToken})
             refreshAuth()
         }
 
     logout = () => {
         return new Promise((resolve) => {
-            sessionStorage.removeItem("accessToken")
+            localStorage.removeItem("accessToken")
             this.setState({...this.state, accessToken: null})
             resolve()
         })
