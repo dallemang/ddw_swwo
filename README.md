@@ -1,68 +1,75 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ddw-react-oauth-start
 
-## Available Scripts
+This project is a quick-start for building a react application that authenticates with
+data.world's OAuth service, and stores the data.world API token in the browser's local 
+storage to allow making data.world API calls to access resources on behalf of an 
+authenticated user. 
 
-In the project directory, you can run:
+This app has no server-side state, and therefore has no secure place to put the OAuth
+clientid/secret, or from which to make secure API calls - for this app, or any that 
+are derived from it, the clientid/secret will be embedded in the compiled javascript
+for the application and visible to anyone who inspects it.  
 
-### `npm start`
+## Clone this repo
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone this repo into a new repo locally, called "my-app" (or something more useful)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+    > git clone https://github.com/datadotworld/ddw-react-oauth-start.git my-app
 
-### `npm test`
+## Up and Running
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You should be able to start the app in a development environment very quickly:
 
-### `npm run build`
+    > cd my-app
+    > yarn install
+    > yarn start
+    
+That should load the app up and start it on http://localhost:3000.  You should be able 
+to click on the "Options" menu in the upper right of the screen and select "Log in"
+to authenticate with your data.world account.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once you do that, you should see a link in the center of the screen for "My 
+Datasets" - a very simple feature that let's the logged-in user page through their
+data.world datasets.  Not particularly useful in itself, but it shows an end-to-end 
+flow through an application - login through API call - all you need to do to build
+your own application is rip out the "MyDatasets" component and plug in your own.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## OAuth configuration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You'll notice in this repo that there are several environment files - this is where 
+the ClientID/Secret needed to support the OAuth handshake to authenticate users.  
+`.env.development` contains a pair that will work for any app with a callback
+url of `http://localhost:3000/#/callback`, which means you can use that file
+for your own local application development on any app based on this starter. 
 
-### `npm run eject`
+## Hosting/sharing the applicaiton
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+If you want to share your application with others, you will need to host it 
+somewhere other than `localhost`.  Since this is a completely client-side React app
+that is a static web page from the POV of a web server, a good starting place to
+host a shared instance of your application is on **Github Pages**.  This app is
+pre-configured for deployment to Github pages - the `deploy` task in `package.json`
+will do just that.  You will need to update the references to 
+`ddw-react-oauth-start` in `package.json` and in `.env.production`, and then 
+when you run
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    > yarn deploy
+    
+it will build your React app and push the bundle to the `gh-pages` branch of your
+project.  That will serve your application up on a URL under `github.io` - in order
+for anyone (including you) to authenticate to the application and use it, you will
+need to get a ClientID/Secret and update it into `.env.production` 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You can claim a new ClientID/Secret via [this form](https://docs.google.com/forms/d/e/1FAIpQLScQ8HHi37RfTCUnejCCXa2aVI77X9x5YiYdA8Z3HkjfTQ74Cw/viewform).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You will need to provide a callback URL for your application - if you are hosting 
+your app on Github Pages, the default url will be:
 
-## Learn More
+    https://<YOUR_GITHUB_ACCOUNT>.github.io/<GITHUB_REPO>/#/callback
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For example, the callback URL for this starter app is 
+`https://datadotworld.github.io/ddw-react-oauth-start/#/callback`.  If you configure
+the gh-pages URL differently, or host the app somewhere else, then the callback
+URL will need to be updated accordingly.  Make sure to include the hash (`#`) in the 
+URL - that's important to the React router being used within the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
